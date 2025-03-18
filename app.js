@@ -96,3 +96,25 @@ function asignarAmigoSecretoRobusta(participantes) {
 
     return asignaciones;
 }
+/**
+ * Función que se llama cuando se hace clic en el botón "Sortear amigo".
+ * Realiza el sorteo si hay suficientes participantes.
+ */
+function sortearAmigo() {
+    // Verificar si hay al menos dos amigos en la lista para realizar el sorteo.
+    if (listaDeAmigos.length < 2) {
+        alert("Por favor, añade al menos dos amigos para realizar el sorteo.");
+        return; // Detener la ejecución si no hay suficientes participantes.
+    }
+
+    // Llamar a la función para asignar los amigos secretos.
+    const resultadosSorteo = asignarAmigoSecretoRobusta(listaDeAmigos);
+
+    // Verificar si se obtuvieron resultados válidos del sorteo.
+    if (resultadosSorteo) {
+        // Mostrar los resultados en el HTML.
+        mostrarResultados(resultadosSorteo);
+    } else {
+        alert("Hubo un error al realizar el sorteo. Por favor, intenta de nuevo.");
+    }
+}
