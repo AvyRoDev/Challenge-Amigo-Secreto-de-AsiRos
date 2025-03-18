@@ -37,3 +37,16 @@ function agregarAmigo() {
     // Limpiar el campo de texto para la siguiente entrada.
     inputAmigo.value = "";
 }
+/**
+ * Función para actualizar la lista de nombres de amigos mostrada en el HTML.
+ */
+function actualizarListaAmigos() {
+    // Limpiar el contenido actual de la lista en el HTML.
+    listaAmigosElement.innerHTML = "";
+    // Iterar sobre el array de amigos y crear un elemento de lista (<li>) por cada uno.
+    listaDeAmigos.forEach(amigo => {
+        const listItem = document.createElement('li');
+        listItem.textContent = amigo; // Establecer el texto del elemento de lista como el nombre del amigo.
+        listaAmigosElement.appendChild(listItem); // Añadir el elemento de lista al <ul> en el HTML.
+    });
+}
