@@ -118,3 +118,18 @@ function sortearAmigo() {
         alert("Hubo un error al realizar el sorteo. Por favor, intenta de nuevo.");
     }
 }
+/**
+ * Función para mostrar los resultados del sorteo en el HTML.
+ * @param {object} resultadosSorteo - El objeto con las asignaciones de amigo secreto.
+ */
+function mostrarResultados(resultadosSorteo) {
+    // Limpiar el contenido actual de la lista de resultados en el HTML.
+    resultadoElement.innerHTML = "";
+    // Iterar sobre el objeto de resultados y crear un elemento de lista (<li>) por cada pareja.
+    for (const participante in resultadosSorteo) {
+        const amigoSecreto = resultadosSorteo[participante];
+        const listItem = document.createElement('li');
+        listItem.textContent = `${participante} le regalará a: ${amigoSecreto}`; // Formatear el texto del resultado.
+        resultadoElement.appendChild(listItem); // Añadir el elemento de lista al <ul> de resultados.
+    }
+}
