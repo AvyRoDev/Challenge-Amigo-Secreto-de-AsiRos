@@ -56,7 +56,7 @@ function actualizarListaAmigos() {
  * @param {string} participantes - Un array con los nombres de los participantes.
  * @returns {object} - Un objeto donde las claves son los participantes y los valores son sus amigos secretos asignados.
  */
-function asignarAmigoSecretoRobusta(participantes) {
+function realizarSorteo(participantes) {
     const n = participantes.length;
     if (n < 2) {
         return {}; // No se puede realizar el sorteo con menos de 2 participantes.
@@ -108,7 +108,7 @@ function sortearAmigo() {
     }
 
     // Llamar a la función para asignar los amigos secretos.
-    const resultadosSorteo = asignarAmigoSecretoRobusta(listaDeAmigos);
+    const resultadosSorteo = realizarSorteo(listaDeAmigos);
 
     // Verificar si se obtuvieron resultados válidos del sorteo.
     if (resultadosSorteo) {
