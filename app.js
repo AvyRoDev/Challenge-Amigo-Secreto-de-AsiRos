@@ -2,7 +2,7 @@
 // app.js
 
 // Array para almacenar los nombres de los participantes del amigo secreto (vacio).
-const listaDeAmigos =``;
+const listaDeAmigos =[];
 
 // Obtener referencias a elementos del DOM para interactuar con el HTML.
 const inputAmigo = document.getElementById('amigo'); // Campo de texto para ingresar nombres.
